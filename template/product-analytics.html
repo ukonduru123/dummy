@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Product Analytics{% endblock %}
+
+{% block page_head %}
+    <link rel="stylesheet" href="/static/css/product-analytics.css">
+    <h1 style="font-size: 20px"><strong>Product Analytics</strong><br></h1>
+{% endblock %}
+
+{% block page_content %}
+
+<!-- Product analytics content -->
+<!-- Two column formatting style -->
+<div class="container">
+    <!-- Orders by Product Section -->
+    <div class="orders-by-product">
+        <h2><strong>Orders by Product</strong><br>January 2023 - December 2023</h2>
+        <p><strong>Filter By:</strong> Year</p>
+        <img src="/static/assets/ordersbyproduct.jpg" alt="Orders by Product">
+    </div>
+    <!-- Products by Time Section -->
+    <div class="products-by-time">
+        <h2><strong>Products by Time</strong><br>January 2023 - December 2023</h2>
+        <p><strong>Filter By:</strong> Year</p>
+        <img src="/static/assets/productbytime.jpg" alt="Products by Time">
+    </div>
+</div>
+{% endblock %}
+

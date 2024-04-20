@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Products
+{% endblock %}
+
+{% block page_head %}
+Products
+{% endblock %}
+
+{% block page_content %}
+<div class="row">
+    {% for product in product %}
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{{ product.image_path }}" class="card-img-top" alt="{{ product.product_name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.product_name }}</h5>
+                <p class="card-text">$ {{ product.product_price }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <!-- need to make a separate product page for manager view without the custom order form -->
+    <!-- Put in fields for custom order -->
+<section id="custom-order-section">
+    <h3>Custom Order Form</h3>
+    <form action="submit_order.php" method="post" class="order-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Desired Baked Good:</label>
+            <input type="text" id="description" name="description" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="allergies">Allergies (if any):</label>
+            <input type="text" id="allergies" name="allergies">
+        </div>
+
+        <div class="form-group">
+            <label for="pickup_week">Desired Pick Up Week:</label>
+            <input type="week" id="pickup_week" name="pickup_week" required>
+        </div>
+        <div class="form-group">
+            <label for="custom_description">Custom Description:</label>
+            <input type="text" id="custom_description" name="custom_description">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Order</button>
+    </form>
+</section>
+{% endblock %}
+

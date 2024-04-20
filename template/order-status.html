@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Order Status{% endblock %}
+
+{% block page_content %}
+<link rel="stylesheet" href="/css/grids.css">
+
+  <div class="row">
+  <div class="col">
+
+    <table class="table table-striped">
+        <tr>
+            <th>Order Number</th>
+			<th>Pick Up Date</th>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Order Total</th>
+            <th>Order Status</th>
+        </tr>
+
+        {% for each_order in orders%}
+        <tr>
+            <td>{{ each_order['order_id'] }}</td>
+            <td>{{ each_order['pickup_date'] }}</td>
+            <td>{{ each_order['product_name'] }}</td>
+            <td>{{ each_order['quantity'] }}</td>
+            <td>{{ each_order['order_total'] }}</td>
+            <td>
+                    <form action="/update_status" method="POST">
+                        <input type="hidden" name="order_id" value="{{ each_order['order_id'] }}">
+                        <select class="quantity" name="order_status">
+                            <option value="In_Progress">In Progress</option>
+                            <option value="Complete">Complete</option>
+                            <option value="Received">Received</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                        <input type="submit" value="Update">
+                    </form>
+                </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+
+{% endblock %}

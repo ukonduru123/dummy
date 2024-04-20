@@ -1,0 +1,62 @@
+/* Style for page_head */
+.page-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: pink;
+    margin-bottom: 20px;
+}
+
+/* Style for form container: the box around the login form */
+.form-container {
+    max-width: 1000px; /*test*/
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50px; /*test*/
+    background-color: #f9f9f9;
+}
+
+/* Style for form labels: "username" and "password" */
+.form-container label {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Style for form inputs */
+.form-control {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Style for submit button */
+.btn-primary {
+    background-color: pink;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    width: 25%;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary:hover {
+    background-color: #EFC1C7;
+}
+
+/* Style for register button */
+#student_create .btn-primary {
+    background-color: pink;
+}
+
+#student_create .btn-primary:hover {
+    background-color: #EFC1C7;
+}

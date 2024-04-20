@@ -1,0 +1,60 @@
+/* reset styling of entire page and apply new styling */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+/* Center elements on page*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 89.3vh;
+}
+
+/* Adjust width of elements on page*/
+.layout {
+    width: 600px;
+}
+
+/* Style page header text */
+.layout h1{
+    font-size:150px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #814B1B;
+}
+
+/* Adjust styling of input boxes on page*/
+.layout .input-box {
+    height: 85px;
+    padding-bottom: 20px;
+
+}
+
+.input-box input {
+    width:100%;
+    height:100%;
+    border-radius:30px;
+    font-size:20px;
+    padding-left: 20px;
+}
+
+/* Adjust styling of button on page*/
+.layout .button{
+    width: 25%;
+    float: right;
+    height: 45px;
+    background: #EFC1C7;
+    border-radius: 60px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Adjust styling of text links on page*/
+.layout .finish {
+    padding-left: 10px;
+    padding-top: 15px;
+    font-size: 20px;
+}

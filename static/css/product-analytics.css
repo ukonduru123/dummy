@@ -1,0 +1,37 @@
+/* General text formatting */
+h1 {
+    font-size: 75px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Divides the page structure */
+.container {
+    display: flex;
+}
+
+/* Allot half of the page to orders by product, and half to products by time; Box-in and center each section */
+.orders-by-product, .products-by-time {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-inline: 2%;
+    text-align: center;
+}
+
+/* Format all images to fill most, but not all, of the box, while maintaining proper aspect ratio */
+.orders-by-product img {
+    width: 85%;
+    height: auto;
+    object-fit: contain;
+}
+.products-by-time img {
+    width: 55%;
+    height: auto;
+    object-fit: contain;
+}

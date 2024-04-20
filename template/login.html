@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block page_head %}
+    <h1 class="page-title">Login</h1>
+    <link rel="stylesheet" href="/static/css/login.css"> <!-- Style Sheet-->
+{% endblock %}
+
+{% block page_content %}
+<div class="form-container">
+    <div class="justify-content-center">
+        <div class="login-form">
+            <form class="row g-3" action="{{ url_for('login') }}" method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                    </div>
+                        <div class="form-group">
+                            {% if redirect_route %}
+                                <input type="hidden" name="redirect_route" value="{{ redirect_route }}">
+                            {% endif %}
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- Commenting this out so the log in page runs -->
+                        <!--<a id="create-account" class="nav-link
+                            {% if request.endpoint=='create-account' %}
+                                active
+                            {%endif %}" href="{{ url_for('create-account') }}">
+                            <button type="button" class="btn btn-primary">Register</button>
+                        </a>-->
+
+

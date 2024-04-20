@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics</title>
+      <link rel="stylesheet" href="/static/css/nav.css">
+      <link rel="stylesheet" href="/static/css/analytics.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+    <body>
+<!-- The Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- Logo image placeholder to left of the nav bar -->
+      <!-- Each webpage link for the nav bar; # as placeholder till function implemented-->
+      <!-- add "active" next to nav-link to <a class""> for active webpage -->
+        <div class="collapse navbar-collapse topnav" id="navbarSupportedContent" style="padding-right: 20px">
+            <a class="navbar-brand" href="/" style="padding-left: 20px">
+             <!-- change picture to logo -->
+             <img src="/static/assets/DessertByDaya.jpg" width="90" height="90" alt="logo">
+           </a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="navbar-nav ms-auto">
+            <!--Analytic, drop down menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="analytics.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Analytics
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="/product-analytics">Product Analytics</a></li>
+                <li><a class="dropdown-item" href="/financial-analytics">Financial Analytics</a></li>
+              </ul>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <!--About-->
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <!--Products, drop down menu -->
+            <li class="nav-item dropdown">
+               <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Products
+               </a>
+               <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/product-edit">Edit Products</a></li>
+                <li><a class="dropdown-item" href="/custom-orders">Custom Orders</a></li>
+                   <li><a class="dropdown-item" href="/product">Product Listings</a></li>
+               </ul>
+            </li>
+            <!--Cart-->
+            <li class="nav-item">
+              <a class="nav-link" href="/cart-payment">Cart</a>
+            </li>
+            <!--Settings, drop menu-->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Settings
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/order-status">Orders Status</a></li>
+                  <li><a class="dropdown-item" href="/order-view">Orders Views</a></li>
+                <li><a class="dropdown-item" href="/customer-profile">Profile</a></li>
+                  <li><a class="dropdown-item" href="/login">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </nav>
+<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- Analytics main page content -->
+<h1><strong>Analytics Dashboard</strong></h1>
+
+<div class="header-row">
+    <h2>Total Orders</h2>
+    <h2>Total Profit</h2>
+</div>
+<div class="container">
+    <a href="product-analytics.html" class="button-link">
+        126 Orders
+    </a>
+    <a href="financial-analytics.html" class="button-link">
+        $2,000 Profit
+    </a>
+</div>
+</body>
+</html>

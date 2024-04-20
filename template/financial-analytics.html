@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Product Analytics{% endblock %}
+
+{% block page_head %}
+    <link rel="stylesheet" href="/static/css/financial-analytics.css">
+
+{% endblock %}
+
+{% block page_content %}
+<!-- Financial analytics content -->
+<!-- Two column formatting style -->
+<h1 style="font-size: 20px"><strong>Financial Analytics</strong><br></h1>
+<div class="container">
+    <!-- Revenues & Costs Section -->
+    <div class="rev-cost">
+        <h2><strong>Revenues & Costs</strong><br>January 2023 - December 2023</h2>
+        <p><strong>Filter By:</strong> Year</p>
+        <img src="/static/assets/costrev.jpg" alt="Revenues & Costs">
+    </div>
+    <!-- Graph Legend -->
+    <div class="legend">
+        <p><strong>Graph Legend</strong></p>
+        <img src="/static/assets/legend.jpg" alt="Graph Legend">
+    </div>
+    <!-- Profit Section -->
+    <div class="profit">
+        <h2><strong>Profits</strong><br>January 2023 - December 2023</h2>
+        <p><strong>Filter By:</strong> Year</p>
+        <img src="/static/assets/Profit.jpg" alt="Profits">
+    </div>
+</div>
+
+{% endblock %}
+

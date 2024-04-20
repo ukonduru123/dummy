@@ -1,0 +1,58 @@
+/* General text formatting */
+h1 {
+    font-size: 75px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Divides the page structure */
+.container {
+    display: flex;
+}
+
+/* Divide the page into two large outer sections for graphs, and one small inner section for a graph legend.
+Box-in and center each section */
+.rev-cost {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-inline: 2%;
+    text-align: center;
+}
+.legend {
+    width: 20%;
+    height: 150px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-inline: 2%;
+    text-align: center;
+}
+.profit {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-inline: 2%;
+    text-align: center;
+}
+
+/* Format all images to fill most, but not all, of the box, while maintaining proper aspect ratio */
+.rev-cost img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+}
+.legend img {
+    width: 85%;
+    height: auto;
+    object-fit: contain;
+}
+.profit img {
+    width: 65%;
+    height: auto;
+    object-fit: contain;
+}

@@ -1,0 +1,40 @@
+/*style the image on page*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 89.4vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*style the text box overlaying image on page*/
+.overlay {
+    position: absolute;
+    background: transparent;
+    width: 70%;
+    height: auto;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(255, 255, 255, .3);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0,0,0,.6);
+}
+
+/*style text on page*/
+.text-box {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 150px;
+    font-weight: bold;
+    color: whitesmoke;
+}

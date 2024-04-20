@@ -1,0 +1,40 @@
+/* Navbar */
+.navbar {
+  background-color: #EFC1C7; /* Navbar background color */
+}
+
+.navbar-brand img {
+  margin-right: 10px; /* Adjust the spacing between the logo and text */
+  border-radius: 50%;
+}
+
+/* Text Color */
+.navbar-nav .nav-link {
+  color: white; /* Link text color */
+  font-size: 20px;
+}
+
+/* text color on hover */
+.navbar-nav .nav-link:hover {
+  color: grey;
+}
+
+.navbar-text {
+  margin-right: 1px; /* Adjust the spacing between the welcome message and logout link */
+  font-size: 20px;
+}
+
+/* Container */
+.container {
+  margin-top: 20px; /* Adjust the top margin of the container */
+}
+
+/* Page Head */
+h1 {
+  margin-bottom: 20px; /* Adjust the bottom margin of the page heading */
+}
+
+/* Flash Messages */
+.alert {
+  margin-bottom: 10px; /* Adjust the bottom margin of the flash messages */
+}

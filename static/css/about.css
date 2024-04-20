@@ -1,0 +1,43 @@
+/* business description */
+.about-title{}
+
+.about-title h1 {
+  font-size: 75px;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.description {
+    padding-left: 650px;
+    padding-top: 100px;
+    padding-right: 30px;
+}
+
+.description p{
+    text-align: center;
+    color: black;
+    font-size: xx-large;
+    font-family: "Comic Sans MS";
+}
+
+/* client picture and contact */
+.client {
+    float: left;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.client p{
+    color:black;
+    text-align: center;
+    font-size: large;
+    font-family: "Comic Sans MS";
+}
+
+.client img{
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+

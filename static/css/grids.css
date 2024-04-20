@@ -1,0 +1,44 @@
+.styling{}
+
+.styling h1{
+  font-size: 75px;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.styling h2{
+  font-size: 20px;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.container {
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
+  text-align: left;
+  border-collapse: collapse;
+  background-color: #EFC1C7;
+}
+
+.container row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px
+}
+
+.container border-box {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.container col-2 {
+  flex-basis: 20%;
+}
+
+.container col-8 {
+  flex-basis: 80%;
+}

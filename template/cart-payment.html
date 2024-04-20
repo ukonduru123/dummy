@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Cart Payment{% endblock %}
+
+{% block page_content %}
+<!--Stylesheets and Bootstrap ref-->
+<link rel="stylesheet" href="/static/css/cart.css">
+
+<!--Title-->
+<h1 id="checkout-title">Check Out Your Goodies!</h1>
+
+<!--Main content container-->
+<div class="main-content">
+    <!--Contact Information section-->
+    <section class="contact-info">
+        <header>
+            <h2>Contact Information</h2>
+            <!-- POST to handle form submission -->
+            {% for customer in customer %}
+            <form method="POST">
+                <label for="first_name">First name:</label>
+                <input type="text" id="first_name" name="first_name" value="{{ customer.customer_fname }}" required>
+
+                <label for="last_name">Last name:</label>
+                <input type="text" id="last_name" name="last_name" value="{{ customer.customer_lname }}" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" value="{{ customer.customer_phone }}" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" value="{{ customer.customer_email }}" required>
+
+                <!-- Submit button for the form -->
+                <button type="submit" class="btn btn-primary">Update Contact Info</button>
+            </form>
+            {% endfor %}
+        </header>
+    </section>
+
+    <!--Cart Summary section-->
+    <aside class="cart-summary">
+        <header>
+            <h2>Cart Summary</h2>
+            {% for product in cart_products %}
+            <div class="product" style="display: grid; grid-template-columns: auto 1fr;  padding: 10px;">
+                <!-- Image urls are stored in static -->
+                <img src="/static/assets/{{ product.product_name|replace(' ', '')|lower }}.jpg" alt="{{ product.product_name }}" width="100">
+                <div style="padding:10px;">
+                    <p>{{ product.product_name }}</p>
+                    <p>Price: ${{ product.product_price }}</p>
+                    <p>Quantity: <input type="number" name="quantity-{{ product.product_id }}" value="1"></p>
+                </div>
+            </div>
+            {% else %}
+            <p>Your cart is empty :(</p>
+            {% endfor %}
+            <div class="cart-total" style="padding:10px;">
+                <p><strong>Cart Total: ${{ cart_total }}</strong></p>
+            </div>
+        </header>
+    </aside>
+
+    <!--Payment section-->
+    <article class="payment-info">
+        <header>
+            <h2>Payment</h2>
+            <p>After placing an order, you will be redirected to the PayPal website to complete your transaction.</p>
+            <button onclick="openPayPal()">Check Out with <img src="/static/assets/paypallogo.png" alt="PayPal" width="40"></button>
+        </header>
+    </article>
+</div>
+
+<script>
+    function openPayPal() {
+        <!-- Handling PayPal checkout? -->
+        window.open("https://www.paypal.com");
+    }
+</script>
+
+{% endblock %}
