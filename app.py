@@ -122,7 +122,7 @@ def customer_view(customer_id):
             .all()
         # changed template rendered from create-account to products because the registration isnt done yet
         if customer:
-            return render_template('product.html', customer=customer, users=users, action='read')
+            return render_template('product_view_all.html', customer=customer, users=users, action='read')
 
         else:
             flash(f'Customer attempting to be viewed could not be found!', 'error')
@@ -134,7 +134,7 @@ def customer_view(customer_id):
             .all()
         # changed template rendered from create-account to products because the registration isnt done yet
         if customer:
-            return render_template('product.html', customer=customer, users=users, action='read')
+            return render_template('product_view_all.html', customer=customer, users=users, action='read')
 
         else:
             flash(f'Your record could not be located. Please create an account', 'error')
@@ -151,7 +151,7 @@ def product_view_all():
 # check if order by or with entities for this query statement
    product = Product.query.order_by(Product.product_name).all()
    print(f"Products: {product}")
-   return render_template('product.html', product=product)
+   return render_template('product_view_all.html', product=product)
 
 # VIEW INDIVIDUAL PRODUCTS
 @app.route('/product/<int:product_id>')
@@ -161,7 +161,7 @@ def product_view(product_id):
         .all()
 
     if product:
-        return render_template('product.html', product=product, product_category=product_category)
+        return render_template('product_view_all.html', product=product, product_category=product_category)
     else:
         flash(f'The dessert you are looking for does not exist.', 'error')
         return redirect(url_for('home'))

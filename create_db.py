@@ -60,9 +60,9 @@ with app.app_context():
 # Initial loading of products
     products = [
         {'product_name': 'Classic Chocolate Chip', 'product_description':'Yummy',
-            'product_image': '/static/assets/chocchipcookie.jpg', 'product_price': 20, 'category_id': 1},
+            'product_image': 'chocchipcookie.jpg', 'product_price': 20.00, 'category_id': 1},
         {'product_name': 'Slutty Blondie','product_description': 'Also yummy',
-         'product_image': '/static/assets/sluttyblondiebars.jpg', 'product_price': 20, 'category_id': 2},
+         'product_image': 'sluttyblondiebars.jpg', 'product_price': 20.00, 'category_id': 2},
     ]
 
     for each_product in products:
