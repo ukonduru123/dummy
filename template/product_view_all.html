@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    View All Desserts - {{ product['product_name'] }}
+    View All Desserts
 {% endblock %}
 
 {% block page_head %}
@@ -19,48 +19,47 @@
         </div>
     </div>
 
+    <div class="row">
+        {% for p in product %}
+        <div class="col-lg-7">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Dessert Details</h3>
+                </div>
+                <div class="panel-body">
+                    <h3>{{ p.product_name }}</h3>
+                    <h4>{{ "$%.2f"|format(p.product_price) }}</h4>
+                    <hr />
+                    <strong>{{ p.product_description }}</strong>
+                    <hr />
+                </div>
 
-    <div class="col-lg-7">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Dessert Details</h3>
-			</div>
-			<div class="panel-body">
-				<h3>{{ product['product_name'] }}</h3>
-				<h4>{{ "$%.2f"|format(product['product_price']) }}</h4>
-				<hr />
-				<strong>{{ product['product_description'] }}</strong>
-				<hr />
-			</div>
+                <form action="{{ url_for('cart_add', product_id=p.product_id) }}" method="GET">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="row g-2">
+                                <div class="col-lg-12">
+                                    <label for="product_quantity" class="form-label"><strong>Quantity</strong></label>
+                                </div>
+                                <div class="col-lg-12">
+                                    <input class="col-xs-2" type="number" step="1" min="1" max="20" class="form-control" id="product_quantity"
+                                           name="product_quantity" value="1" required>
+                                </div>
 
-            <form action="{{ url_for('cart_add', product_id=product['product_id']) }}" method="GET">
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="row g-2">
-							<div class="col-lg-12">
-								<label for="product_quantity" class="form-label"><strong>Quantity</strong></label>
-							</div>
-							<div class="col-lg-12">
-                                <input class="col-xs-2" type="number" step="1" min="1" max="20" class="form-control" id="product_quantity"
-                                       name="product_quantity" value="1" required>
-    						</div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-primary">Add To Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
-
-							<div class="col-lg-12">
-                                <button type="submit" class="btn btn-primary">Add To Cart</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
-
-		</div>
-	</div>
-	</div>
-
-
-
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
+
 
 
 
