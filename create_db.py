@@ -22,7 +22,7 @@ with app.app_context():
         # sample
         # --- USER: MANAGER - Daya
         {'username': 'daya', 'email': 'admin@umd.edu', 'first_name': 'Daya', 'last_name': 'Novich',
-         'password': generate_password_hash('dayapw', method='pbkdf2:sha256'), 'role': 'ADMIN'},
+         'password': generate_password_hash('dayapw', method='pbkdf2:sha256'), 'role': 'MANAGER'},
 
         # --- USER: EMPLOYEE - TBD
         {'username': 'manager', 'email': 'manager@umd.edu', 'first_name': 'Joe', 'last_name': 'King',

@@ -85,7 +85,7 @@ def login():
                 return redirect(redirect_route if redirect_route else url_for(default_employee_route_function))
             elif current_user.role == 'CUSTOMER':
                 # check if correct id is used
-                return redirect(redirect_route if redirect_route else url_for(default_customer_route_function, customer_id=current_user['customer_id']))
+                return redirect(redirect_route if redirect_route else url_for(default_customer_route_function,customer_id=current_user['customer_id']))
         else:
             flash(f'Incorrect username or password was used ', 'error')
 
@@ -162,7 +162,7 @@ def product_view(product_id):
     if product:
         return render_template('product_view.html', product=product, product_category=product_category)
     else:
-        flash(f'The product you are looking for does not exist.', 'error')
+        flash(f'The dessert you are looking for does not exist.', 'error')
         return redirect(url_for('home'))
 
 
@@ -513,6 +513,13 @@ def message_delete(message_id):
 
     return redirect(url_for('message_view_all'))
 
+#---------------anayltics-----------------------
+@app.route('/financial-analytics')
+def financial_analytics():
+    return render_template('financial_analytics.html')
+@app.route('/product-analytics')
+def product_analytics():
+    return render_template('product_analytics.html')
 
 if __name__ == '__main__':
     app.run()

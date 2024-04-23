@@ -1,255 +1,50 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block page_title %}Products{% endblock %}
-
-{% block page_content %}
- <!-- Add css styling through product css page -->
-  <link rel="stylesheet" href="/css/product.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
-
-<!-- Second static for selection of baked goods-->
-<nav class="navbar navbar-expand-lg navbar-dark ">
-<!-- Create an add new product button -->
-<button id="button1" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Add New</button>
-<!-- Modal to have an add new product pop up-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add New Item</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Form for image upload and item name input -->
-          <form>
-            <div class="form-group">
-              <label for="itemImage">Upload Image</label>
-              <input type="file" class="form-control-file" id="itemImage">
-            </div>
-            <div class="form-group">
-              <label for="itemName">Item Name</label>
-              <input type="text" class="form-control" id="itemName" placeholder="Enter item name">
-            </div>
-            <div class="form-group">
-              <label for="itemName">Item Price per Dozen</label>
-              <input type="text" class="form-control" id="itemPrice" placeholder="Enter Item Price">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- Create the add and cancel add button -->
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="addItem()">Add Item</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-<!-- Add product information with exit buttons-->
-<!-- Sections on the same webpage -->
-<div class="container1">
-<!--  Add products to the classic cookie section -->
-<section id="cookies-section">
-  <div class="row">
-    <!-- Add chocolate chip cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/chocchipcookie.jpg" width="350" height="350" alt="Choc_Chip_Cookies">
-        <h4> Classic Chocolate Chip Cookies</h4>
-      </div>
-    </div>
-    <!-- Add kitchen sink cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/kitchensinkcookie.jpg" width="350" height="350" alt="Kitchen_Sink_Cookies">
-        <h4> Kitchen Sink Cookies</h4>
-      </div>
-    </div>
-    <!-- Add churro cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/churrocookie.jpg" width="350" height="350" alt="Churro_Cookies">
-        <h4> Churro Cookies</h4>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <!-- Add lemonade cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/lemonadecookie.jpg" width="350" height="350" alt="Lemonade_Cookies">
-        <h4> Lemonade Cookies</h4>
-      </div>
-    </div>
-    <!-- Add peanut butter oatmeal cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/peanutoatmealcookie.jpg" width="350" height="350" alt="Peanut_Butter_Oatmeal_Cookies">
-        <h4> Peanut Butter Oatmeal Cookies</h4>
-      </div>
-    </div>
-    <!-- Add oreo cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/oreocookie.jpg" width="350" height="350" alt="Oreo_Cookies">
-        <h4> Oreo Cookies</h4>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div class="container2">
-<!--  Add products to the dessert bars section -->
-<section id="dessert-bars-section">
-  <div class="row">
-    <!-- Add chocolate chip cookie bars -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/chocchipbar.jpg" width="350" height="350" alt="Choc_Chip_Bars">
-        <h4> Classic Chocolate Chip Bars</h4>
-      </div>
-    </div>
-    <!-- Add slutty blondie bars -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/sluttyblondiebars.jpg" width="350" height="350" alt="Slutty_Blonde_Bars">
-        <h4> Slutty Blondie Bars</h4>
-      </div>
-    </div>
-    <!-- Add smores bars -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/smoresbar.jpg" width="350" height="350" alt="Smores_Bars">
-        <h4> Smores Bars</h4>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <!-- Add lemon bars -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/lemonbars.jpg" width="350" height="350" alt="Lemon_Bars">
-        <h4> Lemon Bars</h4>
-      </div>
-    </div>
-    <!-- Add oreo bars -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/oreobars.jpg" width="350" height="350" alt="Oreo_Bars">
-        <h4> Oreo Bars</h4>
-      </div>
-    </div>
-    <!-- Add sea salt caramel bars -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/caramelbars.jpg" width="350" height="350" alt="Sea_Salt_Caramel_Bars">
-        <h4>Sea Salt Caramel Bars </h4>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div class="container3">
-<!--  Add products to the deluxe cookies section -->
-<section id="deluxe-cookies-section">
-  <div class="row">
-    <!-- Add iced gingerbread oatmeal cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/gingerbread.jpg" width="350" height="350" alt="Iced_Gingerbread_Cookies">
-        <h4> Iced Gingerbread Oatmeal Cookies</h4>
-      </div>
-    </div>
-    <!-- Add muddy buddy cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/muddybuddy.jpg" width="350" height="350" alt="Muddy_Buddy_Cookies">
-        <h4> Muddy Buddy Cookies</h4>
-      </div>
-    </div>
-    <!-- Add strawberry shortcake cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/strawberryshortcake.jpg" width="350" height="350" alt="Strawberry_Shortcake_Cookies">
-        <h4> Strawberry Shortcake Cookies</h4>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <!-- Add coffee cake cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/coffeecake.jpg" width="350" height="350" alt="Coffee_Cake_Cookies">
-        <h4> Coffee Cake Cookies</h4>
-      </div>
-    </div>
-    <!-- Add hot cocoa cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/hotcocoa.jpg" width="350" height="350" alt="Hot_Cocoa_Cookies">
-        <h4> Hot Cocoa Cookies</h4>
-      </div>
-    </div>
-    <!-- Add snowball cookies -->
-    <div class="col-md-4 d-flex">
-      <div class="custom-card flex-fill">
-        <button class="exit" onclick="deleteProduct(this)">X</button>
-        <img src="/static/assets/snowball.jpg" width="350" height="350" alt="Snowball_Cookies">
-        <h4>Snowball Cookies </h4>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
- <!-- JavaScript code to handle adding item -->
-<script>
-    function addItem() {
-      const itemImage = document.getElementById("itemImage").value;
-      const itemName = document.getElementById("itemName").value;
-
-      console.log("Image uploaded:", itemImage);
-      console.log("Item name:", itemName);
-
-      $('#exampleModal').modal('hide');
-    }
-  </script>
-<!-- Java Script to delete items -->
-  <script>
-  function deleteProduct(button) {
-    var productDiv = button.parentElement;
-    productDiv.remove();}
-  </script>
-
-<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+{% block page_title %}
+    Manage Products
 {% endblock %}
 
+{% block page_head %}
+    Manage Products
+{% endblock %}
 
+{% block page_content %}
+
+    <div class="row">
+    <div class="col">
+
+    <table class="table table-striped">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for each_product in products %}
+        <tr>
+            <td>{{ each_product['product_name'] }}</td>
+            <td>{{ each_product['product_description'] }}</td>
+            <td>{{ "$%.2f"|format(each_product['product_price']) }}</td>
+            <td>
+                <a href="{{ url_for('product_update', product_id=each_product['product_id']) }}" class="btn btn-secondary" role="button">Edit</a>
+                <a href="{{ url_for('product_delete', product_id=each_product['product_id']) }}" class="btn btn-secondary" role="button">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Total Number of Products: {{ products|length }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+             <a href="{{ url_for('product_add') }}" class="btn btn-primary" role="button">Add New Product</a>
+        </div>
+    </div>
+
+{% endblock %}
