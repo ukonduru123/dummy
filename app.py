@@ -156,15 +156,15 @@ def product_view_all():
 # VIEW INDIVIDUAL PRODUCTS
 @app.route('/product/<int:product_id>')
 def product_view(product_id):
-    product = Product.query.filter_by(product_id=product_id).first()
-    product_category = ProductCategory.query.order_by(ProductCategory.category_id) \
-        .all()
+    product = Product.query.get(product_id)
+    product_category = ProductCategory.query.order_by(ProductCategory.category_id).all()
 
     if product:
-        return render_template('product_view_all.html', product=product, product_category=product_category)
+        return render_template('product_view.html', product=product, product_category=product_category)
     else:
-        flash(f'The dessert you are looking for does not exist.', 'error')
+        flash(f'The product you are looking for does not exist.', 'error')
         return redirect(url_for('home'))
+
 
 # CONTACT US / CUSTOM ORDERS
 # leads to error
