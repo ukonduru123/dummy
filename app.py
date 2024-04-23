@@ -149,9 +149,9 @@ def customer_view(customer_id):
 @app.route('/product/view')
 def product_view_all():
 # check if order by or with entities for this query statement
-   product = Product.query.order_by(Product.product_name).all()
-   print(f"Products: {product}")
-   return render_template('product_view_all.html', product=product)
+   products = Product.query.all()
+   # print(f"Products: {products}")
+   return render_template('product_view_all.html', products=products)
 
 # VIEW INDIVIDUAL PRODUCTS
 @app.route('/product/<int:product_id>')
