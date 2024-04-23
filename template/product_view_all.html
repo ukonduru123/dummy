@@ -30,8 +30,7 @@
                     <img src="{{ url_for('static', filename='assets/chocchipcookie.jpeg') }}" alt="Chocolate Chip Cookie" class="img-fluid mb-2" style="max-width: 200px;">
                     <h3>{{ p.product_name }}</h3>
                     <h4>{{ "$%.2f"|format(p.product_price) }}</h4>
-                    <hr />
-                    <strong>{{ p.product_description }}</strong>
+                    <h4>{{ p.product_description }}</h4>
                     <hr />
                 </div>
 
